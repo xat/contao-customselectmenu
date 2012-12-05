@@ -13,4 +13,12 @@
 	/**
 	 * Back end form fields
 	 */
-$GLOBALS['BE_FFL']['customselect'] = '\Sope\CustomSelectMenu\CustomSelectMenu';
+
+if(version_compare(VERSION,'3.0','<'))
+{
+	$GLOBALS['BE_FFL']['customselect'] = 'CustomSelectMenu';
+}
+else
+{
+	$GLOBALS['BE_FFL']['customselect'] = '\Sope\CustomSelectMenu\CustomSelectMenu';
+}
