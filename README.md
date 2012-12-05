@@ -5,7 +5,7 @@ What you get is a Select-Menu with an additional last option 'other value'. If
 you select the 'other value' option the Select 'transforms' into an text input field.
 The inputType for this widget is named 'customselect'.
 
-Credits go to Psi|4ward for the idea.
+Credits go to [Psi|4ward](https://github.com/psi-4ward) for the idea.
 
 ## Usage
 
@@ -22,7 +22,7 @@ Just use it like the standard `select` Widget of Contao.
 ```
 
 ## Screen
-![CustomSelectWidget](CustomSelectWidget.png)
+![CustomSelectWidget](https://raw.github.com/psi-4ward/contao-customselectmenu/master/CustomSelectWidget.png)
 
 ## License
 Copyright (c) 2012 Simon Kusterer
