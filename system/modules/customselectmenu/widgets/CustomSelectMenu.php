@@ -20,10 +20,10 @@ namespace Sope\CustomSelectMenu;
 /**
  * Class CustomSelectMenu
  *
- * Displays a select menu with the ability to use a custom Value
+ * Displays a select menu with an additional 'other value' option
  * @copyright  Simon Kusterer 2012
  * @author     Simon Kusterer <http://soped.com>
- * @package    Core
+ * @package    CustomSelectMenu
  */
 class CustomSelectMenu extends \Widget
 {
@@ -85,7 +85,6 @@ class CustomSelectMenu extends \Widget
 	public function generate()
 	{
 		$arrOptions = array();
-		$strClass = 'tl_customselect';
 
 		// Add empty option (XHTML) if there are none
 		if (empty($this->arrOptions))
@@ -119,17 +118,17 @@ class CustomSelectMenu extends \Widget
 		}
 
 		// add an last option 'custom value':
-		// This will transform the Select into an input-field
+		// This will transform the Select into an text input-field
 		$arrOptions[] = sprintf('<option value="other_value">%s</option>', specialchars($GLOBALS['TL_LANG']['MSC']['otherValue']));
 
-		$GLOBALS['TL_JAVASCRIPT']['customselectmenu'] = 'system/modules/customselectmenu/html/js/customselectmenu.js';
+		$GLOBALS['TL_JAVASCRIPT']['customselectmenu'] = 'system/modules/customselectmenu/html/js/customselectmenu.min.js';
 
 		$strSelect = sprintf('<div class="tl_customselect_select"><select name="%s" class="tl_select" onfocus="Backend.getScrollOffset()">%s</select>%s</div>',
 			$this->strName,
 			implode('', $arrOptions),
 			$this->wizard);
 
-		$strInput = sprintf('<div class="tl_customselect_input"><input type="text" name="%s" class="tl_text" value="" onfocus="Backend.getScrollOffset()">&nbsp;<a href="#" class="tl_customselect_switch">x</a></div>',
+		$strInput = sprintf('<div class="tl_customselect_input"><input type="text" name="%s" class="tl_text" value="" onfocus="Backend.getScrollOffset()">&nbsp;<a href="#" class="tl_customselect_reset">x</a></div>',
 			$this->strName);
 
 		$strJs = '<script>window["CSM'.$this->strId.'"] = new CustomSelectMenu("ctrl_'.$this->strId.'", "'.specialchars($this->varValue).'");</script>';

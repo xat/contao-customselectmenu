@@ -4,17 +4,16 @@
  *
  * Copyright (C) 2005-2012 Leo Feyer
  *
- * @package   Notify
+ * @package   CustomSelectMenu
  * @author    Simon Kusterer
- * @license   MIT
+ * @license   LGPL
  * @copyright Simon Kusterer 2012
  */
+
 
 /**
  * Register the namespaces
  */
-
-
 ClassLoader::addNamespaces(array
 (
 	'Sope'
