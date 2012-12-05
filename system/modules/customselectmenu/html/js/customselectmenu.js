@@ -46,7 +46,7 @@ var CustomSelectMenu = new Class({
 
         this.select.addEvent('change', function() {
             if (this.options.length === (this.selectedIndex+1)) {
-                // last option the select was choosen
+                // last option of the select was choosen
                 // switch to the textinput
                 self.showInput();
             }
