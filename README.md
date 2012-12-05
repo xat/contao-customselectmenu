@@ -22,7 +22,7 @@ Just use it like the standard `select` Widget of Contao.
 ```
 
 ## Screen
-![CustomSelectWidget](https://raw.github.com/psi-4ward/contao-customselectmenu/master/CustomSelectWidget.png)
+![CustomSelectWidget](https://raw.github.com/xat/contao-customselectmenu/master/CustomSelectWidget.png)
 
 ## License
 Copyright (c) 2012 Simon Kusterer
