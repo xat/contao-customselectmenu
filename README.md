@@ -5,6 +5,8 @@ What you get is a Select-Menu with an additional last option 'other value'. If
 you select the 'other value' option the Select 'transforms' into an text input field.
 The inputType for this widget is named 'customselect'.
 
+![Screenshot](http://scripts.pixelquote.com/CustomSelectWidget.png "Screenshot")
+
 Credits go to Psi|4ward for the idea.
 
 ## License
