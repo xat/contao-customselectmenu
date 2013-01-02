@@ -88,6 +88,7 @@ var CustomSelectMenu = new Class({
     showInput: function()
     {
         this.show(this.inputContainer, this.selectContainer);
+        this.input.focus();
     },
 
     /**
