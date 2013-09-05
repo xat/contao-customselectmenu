@@ -26,6 +26,35 @@ var CustomSelectMenu = new Class({
         this.wrapper         = document.id(wrapperId); // Wrapper-Div.. everything is in here
         this.selectContainer = this.wrapper.getElement('.tl_customselect_select');
         this.inputContainer  = this.wrapper.getElement('.tl_customselect_input');
+        
+        // support MultiColumnWizard
+        this.multiColumnWizard = this.wrapper.getParent('.multicolumnwizard');
+
+        if(this.multiColumnWizard != null && (this.selectContainer == null || this.inputContainer == null))
+        {
+            var rowIndex, cellIndex, elId;
+
+            rowIndex = this.wrapper.getParent('tr').rowIndex;
+
+            if(rowIndex > 1)
+            {
+                cellIndex = this.wrapper.getParent('td').cellIndex;
+
+                elId = this.multiColumnWizard.rows[rowIndex-1].cells[cellIndex].getElement('.' + this.wrapper.get('class')).get('id');
+                elId = elId.replace('ctrl_', '');
+
+                if(this.selectContainer == null)
+                {
+                    this.selectContainer = window['CSM' + elId].selectContainer.clone();
+                }
+
+                if(this.inputContainer == null)
+                {
+                    this.inputContainer = window['CSM' + elId].inputContainer.clone();
+                }
+            }
+        }
+        
         this.select          = this.selectContainer.getElement('select'); // The actual select-Element
         this.selectOptions   = this.selectContainer.getElements('option'); // Array of Option-Elements
         this.input           = this.inputContainer.getElement('input'); // Textinput
