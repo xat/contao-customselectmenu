@@ -22,3 +22,8 @@ else
 {
 	$GLOBALS['BE_FFL']['customselect'] = '\Sope\CustomSelectMenu\CustomSelectMenu';
 }
+
+if(TL_MODE == 'BE')
+{
+	$GLOBALS['TL_CSS']['customselect'] = 'system/modules/customselectmenu/html/css/customselectmenu.css';
+}
