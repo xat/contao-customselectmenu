@@ -1,0 +1,13 @@
+.multicolumnwizard .tl_customselect_input .tl_text {
+    width: auto;
+}
+
+.multicolumnwizard .tl_customselect_select .tl_select {
+    width: 100%;
+    top: 2px;
+}
+
+.multicolumnwizard .tl_customselect_select {
+    width: 100%;
+    position: relative;
+}
