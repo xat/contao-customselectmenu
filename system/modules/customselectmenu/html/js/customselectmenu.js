@@ -21,6 +21,9 @@ var CustomSelectMenu = new Class({
     {
         // It's JS.. we need this strange stuff :)
         var self = this;
+        
+        // decode defaultVal
+        defaultVal = this.decodeValue(defaultVal);
 
         // Cache Elements
         this.wrapper         = document.id(wrapperId); // Wrapper-Div.. everything is in here
@@ -135,6 +138,22 @@ var CustomSelectMenu = new Class({
         if (!showEl.getParent()) {
             showEl.inject(this.wrapper);
         }
+    }
+    
+    /**
+     * CustomSelectMenu get confused with html values
+     * so decode them
+     * 
+     * @param mixed value
+     * @return mixed
+     **/
+    decodeValue: function(value)
+    {
+        var stub = new Element('span', { 'html': value });        
+        value = stub.get('text');
+        delete stub;
+        
+        return value;
     }
 
 });
